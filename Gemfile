@@ -1,9 +1,14 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 gem 'bootstrap-sass'
+gem 'devise'
+gem 'activeadmin',github: 'activeadmin'
+gem 'doorkeeper'
+gem 'grape'
+gem 'pry'
 
 group :development, :test do
   gem 'sqlite3'

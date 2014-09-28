@@ -27,5 +27,22 @@ module CobraCenter
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    #Deploy
+    config.assets.initialize_on_precompile = false
+
+    #Devis
+    config.action_mailer.raise_delivery_errors = true     #注意，在development.rb下需修改成true
+    #添加如下几行代码
+    config.action_mailer.default_url_options = { :host => "localhost:3000" } #提示中有提到需要配置，即执行rails g devise:install
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :address => "smtp.sina.com",  #smtp.qq.com
+    :port => 25,
+    :domain => "sina.com",   #qq.com
+    :authentication => :login,
+    :user_name => "xxxxxxx@sina.com", #修改邮箱
+    :password => "xxxxxxxx" #修改正确的密码
+  }   
   end
 end
