@@ -15,6 +15,7 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
       <%= render 'layouts/foot' %>
+      <%= debug(params) if Rails.env.develpment? %>
     </div>
   </body>
 </html>
